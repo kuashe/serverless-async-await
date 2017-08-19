@@ -1,0 +1,22 @@
+{
+  "name": "serverless-async-await",
+  "version": "1.1.0",
+  "description": "Serverless Plugin to use async await without Babel , WebPack or Typescript. Simple transpilation using AsyncToGen",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "keywords": [
+    "serverless",
+    "plugin",
+    "async",
+    "await"
+  ],
+  "author": "kuashe:quentin.homareau@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "async-to-gen": "^1.3.3",
+    "fs-extra": "^4.0.1",
+    "glob": "^7.1.2"
+  }
+}
