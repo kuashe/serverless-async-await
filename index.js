@@ -36,9 +36,6 @@ class ServerlessPlugin
   }
 
 
-  static log( log ){
-    this.serverless.cli.log('Transpiling Async Await...');
-  }
 
 
 
@@ -67,12 +64,12 @@ class ServerlessPlugin
     
     
     filesToTranspile  =  listFilesToTranspile( projectPath , [] )
-    filesFolderToCopy =  listFilesFoldersToCopy(projectPath , [] , this)
+    filesFolderToCopy =  listFilesFoldersToCopy(projectPath , [] )
 
    
     for(var fileFolder of filesFolderToCopy )
     {
-      this.serverless.cli.log(fileFolder)
+      
 
       sourceFileFoldersPath = resolvePath(projectPath , fileFolder)
       fileFolderCopyPath    = resolvePath(pluginOutputPath , fileFolder)

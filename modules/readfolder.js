@@ -24,14 +24,16 @@ function listFilesFoldersToCopy(path , exclude , obj){
 
     
 
-    var files   = glob.sync('*.*',{ root : path , ignore : ignoredFiles   })
+    var files           = glob.sync('*.*',{ root : path , ignore : ignoredFiles   })
+    var filesWithNoName = glob.sync('*', ,{ root : path , ignore : ignoredFiles   })
 
+    
     var folders = glob.sync('*/', { root : path , ignore : ignoredFolders })
 
    
 
 
-    filesFolderToCopy = filesFolderToCopy.concat(folders, files)
+    filesFolderToCopy = filesFolderToCopy.concat(folders, files , filesWithNoName)
 
 
     return filesFolderToCopy    
