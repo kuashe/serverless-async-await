@@ -103,8 +103,6 @@ class ServerlessPlugin
     var serverlessBuildFolder = resolvePath( __dirname ,'..' , '..' , '__build__' , '.serverless')
     var pluginOutputPath      = resolvePath( __dirname ,'..' , '..' , '__build__/' )
 
-    
-    var self = this 
 
     waitForFiles(serverlessBuildFolder ,  () => {
 

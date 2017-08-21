@@ -11,7 +11,7 @@ function listFilesToTranspile(path , exclude){
 
 }
 
-function listFilesFoldersToCopy(path , exclude , obj){
+function listFilesFoldersToCopy(path , exclude ){
     
 
     var filesFolderToCopy = []

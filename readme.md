@@ -6,7 +6,7 @@
 
 Frictionless async await transpiler for Node 0.12 using async-to-gen
 
-Transpile your entire project using async await. 
+Transpile your entire project with async await. 
 
 ## Instalation
 
