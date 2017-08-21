@@ -4,7 +4,7 @@
   "description": "Serverless Plugin to use async await without Babel , WebPack or Typescript. Simple transpilation using AsyncToGen",
   "main": "index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "mocha"
   },
   "keywords": [
     "serverless",
@@ -20,7 +20,9 @@
     "glob": "^7.1.2"
   },
   "devDependencies": {
-    "mocha": "^3.5.0"
+    "extract-zip": "^1.6.5",
+    "mocha": "^3.5.0",
+    "unzip": "^0.1.11"
   },
   "directories": {
     "test": "test"

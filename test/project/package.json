@@ -10,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "extract-zip": "^1.6.5",
-    "serverless-async-await": "^1.1.0",
-    "unzip": "^0.1.11"
+    "serverless-async-await": "^1.1.0"
   }
 }
