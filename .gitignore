@@ -48,3 +48,4 @@ Temporary Items
 
 node_modules
 test/project/node_modules
+test/project/.serverless
