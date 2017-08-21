@@ -22,7 +22,8 @@
   "devDependencies": {
     "extract-zip": "^1.6.5",
     "mocha": "^3.5.0",
-    "unzip": "^0.1.11"
+    "unzip": "^0.1.11",
+    "zip-local": "^0.3.4"
   },
   "directories": {
     "test": "test"

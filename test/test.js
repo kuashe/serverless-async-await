@@ -1,11 +1,12 @@
 var  readdir    = require('fs-extra').readdirSync
-var readStream   = require('fs').createReadStream
-var readFile   = require('fs').readFileSync
+var readStream  = require('fs').createReadStream
+var readFile    = require('fs').readFileSync
 var  exec       = require('child_process').execSync
 var resolvePath = require('path').join
 var assert      = require('assert')
-var unzip       = require('unzip')
+var unzip       = require('zip-local').sync.unzip
 
+var mkdir       = require('fs-extra').mkdirSync
 
 
 //exec('serverless package', { cwd  : './test/project/'})
@@ -34,7 +35,8 @@ describe('Serverless Async Await', function() {
         var unzipedProjectFolder        
         var unzipedModelFolder          
 
-        readStream(slsZip).pipe( unzip.Extract({ path: './test/project/.serverless/aws-nodejs' }) )
+        mkdir(unzipedProjectPath)
+        unzip(slsZip).save(unzipedProjectPath)
 
         it('should contain a zip in .serverless folder', function() {
 
@@ -69,9 +71,10 @@ describe('Serverless Async Await', function() {
         it('should contain a zip with the project inside' , function(){
 
             
-
+           
             unzipedProjectFolder        = readdir(unzipedProjectPath)
             unzipedModelFolder          = readdir(modelsPath)
+            var nodeModulesFolder       = readdir(unzipedProjectPath + '/node_modules/')
 
             var handlerExist     = unzipedProjectFolder.indexOf('handler.js') != -1
             var packageJsonExist = unzipedProjectFolder.indexOf('package.json') != -1
@@ -81,7 +84,18 @@ describe('Serverless Async Await', function() {
             
             var fetchModelExist  =  unzipedModelFolder.indexOf('fetch.js')
             
-            var allFilesExist = handlerExist == packageJsonExist == txtExist == modelFolderExist == gitignoreExist == fetchModelExist == true
+            var nodeModulesExist = nodeModulesFolder.length > 0 
+
+
+            var allFilesExist = handlerExist == packageJsonExist == txtExist == modelFolderExist == gitignoreExist == fetchModelExist == nodeModulesExist == true
+
+            console.log(handlerExist)
+            console.log(packageJsonExist)
+            console.log(txtExist)
+            console.log(modelFolderExist)
+            console.log(gitignoreExist)
+            console.log(fetchModelExist)
+            console.log(nodeModulesExist)
 
             assert(allFilesExist , true)
             

@@ -106,7 +106,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/aws-nodejs/dev/1503320383903-2017-08-21T12:59:43.903Z/aws-nodejs.zip"
+                "S3Key": "serverless/aws-nodejs/dev/1503330587036-2017-08-21T15:49:47.036Z/aws-nodejs.zip"
               },
               "FunctionName": "aws-nodejs-dev-hello",
               "Handler": "handler.hello",
@@ -125,14 +125,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "HelloLambdaVersionzKwSJMtUtPTI0OEUHOmqpaQA6h8eFT6nM5kSXhQmfU": {
+          "HelloLambdaVersionJmeuSGzLNuFgtBIBt36JnyQgXQ6TSauDETCeOK7aIJA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "zK+wSJMtUtPTI0OEUHOmqpaQA6h8eFT6nM5kSXhQmfU="
+              "CodeSha256": "JmeuSGzLNuFgtBIBt36JnyQgXQ6TSauDETCeOK7aIJA="
             }
           }
         },
@@ -145,7 +145,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersionzKwSJMtUtPTI0OEUHOmqpaQA6h8eFT6nM5kSXhQmfU"
+              "Ref": "HelloLambdaVersionJmeuSGzLNuFgtBIBt36JnyQgXQ6TSauDETCeOK7aIJA"
             }
           }
         }
@@ -168,9 +168,6 @@
       },
       "vpc": {}
     },
-    "plugins": [
-      "serverless-async-await"
-    ],
     "functions": {
       "hello": {
         "handler": "handler.hello",
@@ -183,7 +180,7 @@
     "artifact": "C:\\Users\\Quantum\\Google Drive\\Projets\\Experiment\\serverless-async-await\\test\\project\\.serverless\\aws-nodejs.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/aws-nodejs/dev/1503320383903-2017-08-21T12:59:43.903Z",
+    "artifactDirectoryName": "serverless/aws-nodejs/dev/1503330587036-2017-08-21T15:49:47.036Z",
     "artifact": "aws-nodejs.zip"
   }
 }
