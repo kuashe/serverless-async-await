@@ -8,7 +8,7 @@ var unzip       = require('unzip')
 
 
 
-exec('serverless package', { cwd  : './test/project/'})
+//exec('serverless package', { cwd  : './test/project/'})
 
 
 describe('Serverless Async Await', function() {
