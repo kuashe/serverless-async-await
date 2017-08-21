@@ -80,22 +80,15 @@ describe('Serverless Async Await', function() {
             var packageJsonExist = unzipedProjectFolder.indexOf('package.json') != -1
             var txtExist         = unzipedProjectFolder.indexOf('.txt') != -1
             var modelFolderExist = unzipedProjectFolder.indexOf('models') != -1
-            var gitignoreExist   = unzipedProjectFolder.indexOf('.gitignore') != -1
             
             var fetchModelExist  =  unzipedModelFolder.indexOf('fetch.js') != -1
             
             var nodeModulesExist = nodeModulesFolder.length > 0 
 
 
-            var allFilesExist = handlerExist == packageJsonExist == txtExist == modelFolderExist == gitignoreExist == fetchModelExist == nodeModulesExist == true
+            var allFilesExist = handlerExist == packageJsonExist == txtExist == modelFolderExist ==  fetchModelExist == nodeModulesExist == true
 
-            console.log(handlerExist)
-            console.log(packageJsonExist)
-            console.log(txtExist)
-            console.log(modelFolderExist)
-            console.log(gitignoreExist)
-            console.log(fetchModelExist)
-            console.log(nodeModulesExist)
+   
 
             assert(allFilesExist , true)
             

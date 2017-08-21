@@ -106,7 +106,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/aws-nodejs/dev/1503330587036-2017-08-21T15:49:47.036Z/aws-nodejs.zip"
+                "S3Key": "serverless/aws-nodejs/dev/1503331592072-2017-08-21T16:06:32.072Z/aws-nodejs.zip"
               },
               "FunctionName": "aws-nodejs-dev-hello",
               "Handler": "handler.hello",
@@ -180,7 +180,7 @@
     "artifact": "C:\\Users\\Quantum\\Google Drive\\Projets\\Experiment\\serverless-async-await\\test\\project\\.serverless\\aws-nodejs.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/aws-nodejs/dev/1503330587036-2017-08-21T15:49:47.036Z",
+    "artifactDirectoryName": "serverless/aws-nodejs/dev/1503331592072-2017-08-21T16:06:32.072Z",
     "artifact": "aws-nodejs.zip"
   }
 }
