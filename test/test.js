@@ -82,7 +82,7 @@ describe('Serverless Async Await', function() {
             var modelFolderExist = unzipedProjectFolder.indexOf('models') != -1
             var gitignoreExist   = unzipedProjectFolder.indexOf('.gitignore') != -1
             
-            var fetchModelExist  =  unzipedModelFolder.indexOf('fetch.js')
+            var fetchModelExist  =  unzipedModelFolder.indexOf('fetch.js') != -1
             
             var nodeModulesExist = nodeModulesFolder.length > 0 
 
