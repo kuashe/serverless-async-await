@@ -2,6 +2,7 @@
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![npm version](https://badge.fury.io/js/serverless-async-await.svg)](https://badge.fury.io/js/serverless-async-await)
+[![Build Status](https://travis-ci.org/kuashe/serverless-async-await.svg?branch=master)](https://travis-ci.org/kuashe/serverless-async-await)
 
 Frictionless async await transpiler for Node 0.12 using async-to-gen
 
