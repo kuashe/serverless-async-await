@@ -25,7 +25,7 @@ function listFilesFoldersToCopy(path , exclude ){
     
 
     var files           = glob.sync('*.*',{ root : path , ignore : ignoredFiles   })
-    var filesWithNoName = glob.sync('*', ,{ root : path , ignore : ignoredFiles   })
+    var filesWithNoName = glob.sync('*'  ,{ root : path , ignore : ignoredFiles   })
 
     
     var folders = glob.sync('*/', { root : path , ignore : ignoredFolders })
