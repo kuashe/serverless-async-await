@@ -3,8 +3,8 @@
 	"node_js": [
 		"8"
 	],
-	"before_script" : ["npm install --prefix ./test/project" , "npm install -g serverless" , "cd ./test/project/", " serverless package" , "cd ../.."] ,
+	"before_script" : ["npm install --prefix ./test/project" ,"npm ls --prefix ./test/project", "npm install -g serverless" , "cd ./test/project/", " serverless package" , "cd ../.."] ,
 	"cache" : {
-		"directories" : ['node_modules' , './test/project/node_modules']
+		"directories" : ['node_modules' , ]
 	}
 }
