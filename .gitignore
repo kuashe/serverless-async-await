@@ -49,3 +49,5 @@ Temporary Items
 node_modules
 test/project/node_modules
 local/
+test/include
+test/project/exclude
