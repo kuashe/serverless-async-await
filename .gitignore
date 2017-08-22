@@ -51,3 +51,4 @@ test/project/node_modules
 local/
 test/include
 test/project/exclude
+test/project/.serverless/

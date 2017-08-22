@@ -106,7 +106,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/aws-nodejs/dev/1503331592072-2017-08-21T16:06:32.072Z/aws-nodejs.zip"
+                "S3Key": "serverless/aws-nodejs/dev/1503386445033-2017-08-22T07:20:45.033Z/aws-nodejs.zip"
               },
               "FunctionName": "aws-nodejs-dev-hello",
               "Handler": "handler.hello",
@@ -125,14 +125,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "HelloLambdaVersionJmeuSGzLNuFgtBIBt36JnyQgXQ6TSauDETCeOK7aIJA": {
+          "HelloLambdaVersion7p4NexYRuzOsoomEZEP4W10mCzDeqTdtfySKqRUpn8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "JmeuSGzLNuFgtBIBt36JnyQgXQ6TSauDETCeOK7aIJA="
+              "CodeSha256": "7p4NexYRuzOs/oomEZEP4W10mCzDeqTdtfySKqRUpn8="
             }
           }
         },
@@ -145,7 +145,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersionJmeuSGzLNuFgtBIBt36JnyQgXQ6TSauDETCeOK7aIJA"
+              "Ref": "HelloLambdaVersion7p4NexYRuzOsoomEZEP4W10mCzDeqTdtfySKqRUpn8"
             }
           }
         }
@@ -168,6 +168,9 @@
       },
       "vpc": {}
     },
+    "plugins": [
+      "serverless-async-await"
+    ],
     "functions": {
       "hello": {
         "handler": "handler.hello",
@@ -177,10 +180,10 @@
         "vpc": {}
       }
     },
-    "artifact": "C:\\Users\\Quantum\\Google Drive\\Projets\\Experiment\\serverless-async-await\\test\\project\\.serverless\\aws-nodejs.zip"
+    "artifact": "C:\\Users\\Quantum\\Google Drive\\Projets\\Experiment\\serverless-async-await\\test\\project\\__build__\\.serverless\\aws-nodejs.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/aws-nodejs/dev/1503331592072-2017-08-21T16:06:32.072Z",
+    "artifactDirectoryName": "serverless/aws-nodejs/dev/1503386445033-2017-08-22T07:20:45.033Z",
     "artifact": "aws-nodejs.zip"
   }
 }
