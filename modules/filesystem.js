@@ -8,7 +8,7 @@ function waitForFiles( path , callback ){
 
         readdir(path , function(err,filesInFolder){
 
-            if(filesInFolder.length == 4)
+            if(filesInFolder.length >= 4)
             {
                 clearInterval(interval)
                 callback()
