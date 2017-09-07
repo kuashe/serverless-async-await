@@ -2,7 +2,7 @@ var glob = require('glob')
 
 function listFilesToTranspile(path , exclude){
 
-    var ignoredFiles = ["node_modules/**", "__build__/**" ]
+    var ignoredFiles = ["**/node_modules/**", "__build__/**" ]
     ignoredFiles     = ignoredFiles.concat(exclude)
 
     var files = glob.sync('**/*.js', { root : path , ignore : ignoredFiles })
@@ -24,9 +24,9 @@ function listFilesFoldersToCopy(path , exclude ){
 
     
 
-    var files                 = glob.sync('*.*',{ root : path , ignore : ignoredFiles   })
-    var filesWithNoName       = glob.sync('*'  ,{ root : path , ignore : ignoredFiles   })
-    var filesWithDotExtension = glob.sync('.*'  ,{ root : path , ignore : ignoredFiles   })
+    var files                 = glob.sync('*.*',{ root : path , ignore : ignoredFiles, nodir: true   })
+    var filesWithNoName       = glob.sync('*'  ,{ root : path , ignore : ignoredFiles, nodir: true   })
+    var filesWithDotExtension = glob.sync('.*'  ,{ root : path , ignore : ignoredFiles, nodir: true   })
     
     var folders = glob.sync('*/', { root : path , ignore : ignoredFolders })
 
