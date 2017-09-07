@@ -5,6 +5,8 @@ const { resolvePath }                                    = require('./modules/pa
 const { asyncAwaitTranspile }                            = require('./modules/transpile.js')
 const { listFilesFoldersToCopy , listFilesToTranspile }  = require('./modules/readfolder.js')
 
+const pluginOutputPath = resolvePath(__dirname , '..','..', '__build__')
+
 
 class ServerlessPlugin 
 {
@@ -28,6 +30,7 @@ class ServerlessPlugin
     };
 
     this.hooks = {
+      'before:package:initialize': this.prepareServicePath.bind(this),
       'before:package:createDeploymentArtifacts' : this.transpileProject.bind(this),
       'after:package:createDeploymentArtifacts' : this.cleanup.bind(this),
       'before:deploy:function:packageFunction': this.transpileProject.bind(this),
@@ -36,13 +39,14 @@ class ServerlessPlugin
   }
 
 
-
+  prepareServicePath() {
+    this.serverless.config.servicePath = pluginOutputPath 
+  }
 
 
   transpileProject() 
   {
 
-    var pluginOutputPath   = resolvePath(__dirname , '..','..', '__build__')
     var projectPath        = resolvePath(__dirname , '..' , '..')
     
     var filesToTranspile     = []
@@ -90,8 +94,6 @@ class ServerlessPlugin
 
         writeFile( transpiledFilePath , transpiledCode)  
     }
-
-    this.serverless.config.servicePath = pluginOutputPath 
 
   }
 
