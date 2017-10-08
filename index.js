@@ -14,7 +14,7 @@ class ServerlessPlugin
   constructor(serverless, options) {
     this.serverless = serverless;
     this.options = options;
-    this.originalServicePath = ''
+    this.originalServicePath = this.serverless.config.servicePath;
 
 
     this.commands = {
@@ -32,15 +32,22 @@ class ServerlessPlugin
     this.hooks = {
       'before:package:initialize': this.prepareServicePath.bind(this),
       'before:package:createDeploymentArtifacts' : this.transpileProject.bind(this),
-      'after:package:createDeploymentArtifacts' : this.cleanup.bind(this),
+      'before:deploy:deploy' : this.cleanup.bind(this),
+      'before:deploy:function:initialize': this.prepareServicePath.bind(this),
       'before:deploy:function:packageFunction': this.transpileProject.bind(this),
-      'after:deploy:function:packageFunction': this.cleanup.bind(this),
+      'after:deploy:function:packageFunction': this.revertServicePath.bind(this),
+      'before:deploy:function:deploy': this.cleanup.bind(this),
     };
   }
 
 
   prepareServicePath() {
     this.serverless.config.servicePath = pluginOutputPath 
+  }
+
+
+  revertServicePath() {
+      this.serverless.config.servicePath = this.originalServicePath;
   }
 
 
@@ -100,18 +107,14 @@ class ServerlessPlugin
 
   cleanup() 
   {
-    
+
     var serverlessFolder      = resolvePath( __dirname , '..' , '..' , '.serverless/')
     var serverlessBuildFolder = resolvePath( __dirname ,'..' , '..' , '__build__' , '.serverless')
     var pluginOutputPath      = resolvePath( __dirname ,'..' , '..' , '__build__/' )
 
-
-    waitForFiles(serverlessBuildFolder ,  () => {
-
-             copy(serverlessBuildFolder , serverlessFolder) 
-             remove(pluginOutputPath)
-    })
-
+    copy(serverlessBuildFolder , serverlessFolder) 
+    remove(pluginOutputPath)
+    
   }
 
 }
