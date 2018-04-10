@@ -1,3 +1,5 @@
+> AWS Lambda now supports [NodeJS 8.10](https://aws.amazon.com/fr/blogs/compute/node-js-8-10-runtime-now-available-in-aws-lambda/) , you should only use this plugin if you are not using AWS and cannot upgrade your Lambda Runtime .
+
 # Serverless Async Await
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
